@@ -1,0 +1,362 @@
+:root {
+    /* colors */
+    --primary-color: #862c02;
+    --secondary-color: #ec6f19;
+    --tertiary-color: #e8c48f;
+
+    /* topography */
+    --text-xs: 0.6em;
+    --text-sm: 0.8em;
+    --text-base: 1em;
+    --text-m: 1.2em;
+    --text-lg: 1.4em;
+    --text-xl: 2em;
+
+    /* shadow */
+    --box-shadow: 0px 5px 10px rgba(127, 127, 127, 0.304);
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--tertiary-color);
+    color: var(--primary-color)
+}
+
+body {
+    font-family: 'open-sans', sans-serif;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--text-m)
+}
+
+a, button {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav ul {
+    list-style: none;
+}
+
+main h1 {
+    padding: 20px;
+}
+
+
+button, main article div div a {
+    padding: 10px 30px;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+button:hover, main article div div a:hover {
+    box-shadow: var(--box-shadow);
+} 
+
+/* header */
+
+header {
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: var(--box-shadow);
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+header nav a:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+header nav img {
+    align-self: start;
+    max-width: 300px;
+    height: auto;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+@media screen and (max-width: 778px) {
+    header nav ul{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+header nav ul li {
+    padding: 0 20px;
+}
+
+header nav ul li:nth-child(2) {
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+
+header nav ul li:nth-child(3) {
+    border-right-width: 1px;
+}
+
+header nav li a:hover, #first-letters > a:hover {
+    transform: translateY(-5px);
+    color: var(--secondary-color);
+}
+
+/* main */
+
+main {
+    padding: 40px;
+    text-align: center;
+    z-index: 5;
+}
+
+main article div div{
+    height: 500px;
+    width: 100%;
+    margin: 40px 0px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    color: var(--primary-color);
+}
+
+@media screen and (min-width: 992px) {
+    main article div{
+        gap: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+#categories-section, #first-letter-section {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+#categories-section img, #first-letter-section img {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* first letter */
+#categorie-section, .category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px 0px;
+}
+
+#categorie-section a, .category a {
+    width: 20%;
+    height: auto;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #872555;
+}
+
+#categorie-section a p, .category a p {
+    padding: 20px 0;
+    color: white;
+}
+
+#categorie-section a:hover, .category a:hover {
+    box-shadow: var(--box-shadow);
+}
+
+#categorie-section a img, .category a img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 778px) {
+    #categorie-section a, .category a {
+        display: block;
+        width: 100%;
+        height: fit-content;
+    }
+
+}
+
+
+#search-form {
+    display: flex;
+    justify-content: center;
+}
+
+#search-form button {
+    border-radius: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+#search-form input {
+    border-width: 1px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 0 5px;
+    width: 200px;
+}
+
+#search-form input:focus {
+    outline: none;
+}
+
+#search-form input::placeholder {
+    color: var(--primary-color);
+    opacity: 50%;
+}
+
+#meal-display {
+    padding: 0;
+}
+
+.recipe__card {
+    padding: 40px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.recipe__card-header {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    object-fit: contain;
+    background-color: #872555;
+    height: 650px;
+}
+
+.recipe__card-header h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.recipe__card-header img {
+    height: 100%;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.recipe__ingredient{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+}
+
+.recipe__ingredient h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: white;
+}
+
+.recipe__ingredient h2 a {
+    color: var(--secondary-color)
+}
+
+#ingrediants {
+    font-weight: 600;
+}
+
+.recipe__ingredient ul {
+    margin: 0 20px;
+}
+
+.recipe__ingredient ul li {
+    color: white;
+}
+
+.recipe__ingredient ul span {
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+#instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+#instructions h2 {
+    padding: 40px 0;
+}
+
+@media screen and (max-width: 992px) {
+    .recipe__card-header {
+        flex-direction: column;
+        height: fit-content
+    }
+
+    .recipe__card-header img {
+        height: auto;
+        width: 100%;
+    }
+
+    .recipe__ingredient {
+        width: 100%;
+    }
+
+    #instructions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+}
+
+#title {
+    font-weight: 600;
+}
+
+#title span {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 40px;
+}
