@@ -28,6 +28,7 @@
 
 body {
     font-family: 'open-sans', sans-serif;
+    position: relative;
 }
 
 a {
@@ -62,6 +63,7 @@ button, main article div div a {
 
 button:hover, main article div div a:hover {
     box-shadow: var(--box-shadow);
+    text-decoration: underline;
 } 
 
 /* header */
@@ -123,10 +125,15 @@ header nav ul li:nth-child(3) {
     border-right-width: 1px;
 }
 
-header nav li a:hover, #first-letters > a:hover {
+header nav li a:hover, #first-letters a:hover {
+    transition: 0.2s;
     transform: translateY(-5px);
     color: var(--secondary-color);
 }
+
+header nav li a, #first-letters a {
+    transition: 0.2s;
+} 
 
 /* main */
 
@@ -134,6 +141,7 @@ main {
     padding: 40px;
     text-align: center;
     z-index: 5;
+    min-height: 100%;
 }
 
 main article div div{
@@ -242,7 +250,7 @@ main article div div{
 }
 
 #meal-display {
-    padding: 0;
+    padding: 40px 0;
 }
 
 .recipe__card {

@@ -1,4 +1,5 @@
 const categorieSection = document.querySelector('#categorie-section');
+const categorieSectionError = document.querySelector('#categorie-section + span');
 const firstLetters = document.querySelector('#first-letters');
 
 const alphabet = [
@@ -24,6 +25,7 @@ function firstLetterDisplay(firstLetter) {
       .then(r => r.json())
       .then((data) => {
         const categorie = data.meals;
+        console.log(categorie)
         try {
             for (i = 0; i < categorie.length; i++) {
                 let img = document.createElement("img");
@@ -40,8 +42,12 @@ function firstLetterDisplay(firstLetter) {
                 newCategory.appendChild(p);
         
                 categorieSection.appendChild(newCategory);
+
+                categorieSectionError.textContent = '';
               }
-        } catch (error) {console.log(error)}
+        } catch (error) {console.log(error)
+          categorieSectionError.textContent = 'aucun plat trouvé..';
+        }
   
         const categorieResult = document.querySelectorAll('a');
   

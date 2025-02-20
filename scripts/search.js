@@ -1,6 +1,7 @@
 const searchValue = document.querySelector("#search");
 const searchButton = document.querySelector("#search-button");
 const categorieSection = document.querySelector("#categorie-section");
+const categorieSectionError = document.querySelector('#categorie-section + span');
 
 function searchByName(name) {
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`)
@@ -23,8 +24,12 @@ function searchByName(name) {
             newCategory.appendChild(p);
     
             categorieSection.appendChild(newCategory);
+
+            categorieSectionError.textContent = '';
           }
-      } catch (error) {console.log(error)}
+      } catch (error) {console.log(error)
+        categorieSectionError.textContent = 'aucun plat trouvé..';
+      }
 
       const categorieResult = document.querySelectorAll("a");
 
