@@ -37,6 +37,10 @@ a {
     font-size: var(--text-m)
 }
 
+.a-active {
+    color: green;
+}
+
 a, button {
     cursor: pointer;
 }
